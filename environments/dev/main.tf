@@ -29,17 +29,17 @@ resource "google_compute_network" "vpc_network" {
 # }
 
 
-# resource "google_datastore_index" "default" {
-#   kind = "kind-test-1"
-#   properties {
-#     name = "property_a"
-#     direction = "ASCENDING"
-#   }
-#   properties {
-#     name = "property_b"
-#     direction = "ASCENDING"
-#   }
-# }
+resource "google_datastore_index" "default" {
+  kind = "kind-test-1"
+  properties {
+    name = "property_a"
+    direction = "ASCENDING"
+  }
+  properties {
+    name = "property_b"
+    direction = "ASCENDING"
+  }
+}
 
   resource "google_compute_instance" "vm_instance1" {
   name         = "terraform-instance"
