@@ -7,9 +7,7 @@ terraform {
 }
 
 provider "google" {
-  project = "my-first-project-310908"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = "${var.project}"
 }
 
 module "vpc" {
@@ -24,10 +22,24 @@ module "http_server" {
   subnet  = "${module.vpc.subnet}"
 }
 
+module "firewall" {
+  source  = "../../modules/firewall"
+  project = "${var.project}"
+  subnet  = "${module.vpc.subnet}"
+}
 
 
-
-
+resource "google_datastore_index" "default" {
+  kind = "kind-test-1"
+  properties {
+    name = "property_a"
+    direction = "ASCENDING"
+  }
+  properties {
+    name = "property_b"
+    direction = "ASCENDING"
+  }
+}
 
   # resource "google_compute_instance" "vm_instance1" {
   # name         = "terraform-instance"
@@ -47,14 +59,3 @@ module "http_server" {
 #   }
 # }
 
-resource "google_datastore_index" "default" {
-  kind = "kind-test-1"
-  properties {
-    name = "property_a"
-    direction = "ASCENDING"
-  }
-  properties {
-    name = "property_b"
-    direction = "ASCENDING"
-  }
-}
