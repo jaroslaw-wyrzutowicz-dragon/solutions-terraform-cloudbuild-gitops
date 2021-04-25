@@ -1,9 +1,5 @@
 locals {
-  env = "dev"
-}
-
-terraform {
-  required_version = "~> 0.12.24"
+  "env" = "dev"
 }
 
 provider "google" {
