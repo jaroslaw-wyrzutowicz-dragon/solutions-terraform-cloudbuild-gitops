@@ -22,11 +22,11 @@ module "http_server" {
   # subnet  = "${module.vpc.subnet}"
 }
 
-module "firewall" {
-  source  = "../../modules/firewall"
-  project = "${var.project}"
-  # subnet  = "${module.vpc.subnet}"
-}
+# module "firewall" {
+#   source  = "../../modules/firewall"
+#   project = "${var.project}"
+#   # subnet  = "${module.vpc.subnet}"
+# }
 
 
 # resource "google_datastore_index" "default" {
