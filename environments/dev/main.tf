@@ -16,11 +16,11 @@ resource "google_compute_network" "vpc_network" {
 #   env     = "${local.env}"
 # }
 
-module "http_server" {
-  source  = "../../modules/http_server"
-  project = "${var.project}"
-  # subnet  = "${module.vpc.subnet}"
-}
+# module "http_server" {
+#   source  = "../../modules/http_server"
+#   project = "${var.project}"
+#   subnet  = "${module.vpc.subnet}"
+# }
 
 # module "firewall" {
 #   source  = "../../modules/firewall"
@@ -41,21 +41,21 @@ module "http_server" {
 #   }
 # }
 
-  # resource "google_compute_instance" "vm_instance1" {
-  # name         = "terraform-instance"
-  # machine_type = "f1-micro"
+  resource "google_compute_instance" "vm_instance1" {
+  name         = "terraform-instance"
+  machine_type = "f1-micro"
 
-  # boot_disk {
-  #   initialize_params {
-  #     image = "debian-cloud/debian-9"
-  #   }
-  # }
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
 
-#   network_interface {
-#     # A default network is created for all GCP projects
-#     network = "default"
-#     access_config {
-#     }
-#   }
-# }
+  network_interface {
+    # A default network is created for all GCP projects
+    network = "default"
+    access_config {
+    }
+  }
+}
 
