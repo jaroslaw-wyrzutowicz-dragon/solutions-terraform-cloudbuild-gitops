@@ -6,11 +6,15 @@ provider "google" {
   project = "${var.project}"
 }
 
-module "vpc" {
-  source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
+resource "google_compute_network" "vpc_network" {
+  name = "vpc-network"
 }
+
+# module "vpc" {
+#   source  = "../../modules/vpc"
+#   project = "${var.project}"
+#   env     = "${local.env}"
+# }
 
 module "http_server" {
   source  = "../../modules/http_server"
