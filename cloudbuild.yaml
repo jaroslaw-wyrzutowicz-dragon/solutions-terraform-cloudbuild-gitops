@@ -76,5 +76,8 @@ steps:
       fi
 # [END tf-apply]      
 
+# [START DOCKER BUILD]
 - name: "docker"
-  args: ["build", "-t", gcr.io/$PROJECT_ID/]
+  args: ["build", "-t", gcr.io/$PROJECT_ID/app-4-docker]
+  
+# [START DOCKER BUILD]
