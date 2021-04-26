@@ -10,27 +10,9 @@ resource "google_compute_network" "vpc_network" {
   name = "vpc-network"
 }
 
-# module "vpc" {
-#   source  = "../../modules/vpc"
-#   project = "${var.project}"
-#   env     = "${local.env}"
-# }
-
-# module "http_server" {
-#   source  = "../../modules/http_server"
-#   project = "${var.project}"
-#   subnet  = "${module.vpc.subnet}"
-# }
-
-# module "firewall" {
-#   source  = "../../modules/firewall"
-#   project = "${var.project}"
-#   # subnet  = "${module.vpc.subnet}"
-# }
-
 
 resource "google_datastore_index" "default" {
-  kind = "kind-test-3"
+  kind = "kind-test-4"
   properties {
     name = "property_a"
     direction = "ASCENDING"
@@ -60,3 +42,21 @@ resource "google_datastore_index" "default" {
   }
 }
 
+
+# module "vpc" {
+#   source  = "../../modules/vpc"
+#   project = "${var.project}"
+#   env     = "${local.env}"
+# }
+
+# module "http_server" {
+#   source  = "../../modules/http_server"
+#   project = "${var.project}"
+#   subnet  = "${module.vpc.subnet}"
+# }
+
+# module "firewall" {
+#   source  = "../../modules/firewall"
+#   project = "${var.project}"
+#   # subnet  = "${module.vpc.subnet}"
+# }
