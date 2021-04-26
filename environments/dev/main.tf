@@ -40,7 +40,7 @@ metadata_startup_script = "sudo apt update | sudo docker pull gcr.io/my-first-pr
 
 service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    email  = "datastoreuser1@my-first-project-310908.iam.gserviceaccount.com" 
+    # email  = "datastoreuser1@my-first-project-310908.iam.gserviceaccount.com" 
     scopes = ["datastore", "cloud-source-repos", "storage-full"]
   }
 
