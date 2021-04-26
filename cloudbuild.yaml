@@ -75,3 +75,6 @@ steps:
         echo "*******************************************************************************"
       fi
 # [END tf-apply]      
+
+- name: "docker"
+  args: ["build", "-t", gcr.io/$PROJECT_ID/]
