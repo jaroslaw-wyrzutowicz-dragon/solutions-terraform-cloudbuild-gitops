@@ -34,7 +34,7 @@ metadata_startup_script = "sudo docker pull gcr.io/my-first-project-310908/docke
 
   boot_disk {
     initialize_params {
-      image = "cos-cloud/cos-stable-89"
+      image = "cos-cloud/cos-stable"
     }
   }
 
