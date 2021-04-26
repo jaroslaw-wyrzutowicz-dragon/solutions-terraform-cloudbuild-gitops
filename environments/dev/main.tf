@@ -27,11 +27,21 @@ resource "google_datastore_index" "default" {
   name         = "terraform-instance"
   machine_type = "f1-micro"
   zone         = "us-central1-a"
+  allow_stopping_for_update = true
+
+metadata_startup_script = "sudo docker pull gcr.io/my-first-project-310908/docker-app-3 && sudo docker run -dp 3000:3000 docker-app-3"
+# apt-get update && sudo apt-get install apache2 -y && echo '<html><body><h1>Environment: ${local.network}</h1></body></html>' | sudo tee /var/www/html/index.html"
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "cos-cloud/cos-stable-89"
     }
+  }
+
+service_account {
+    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    email  = "datastoreuser@my-first-project-310908.iam.gserviceaccount.com" 
+    # scopes = ["cloud-platform"]
   }
 
   network_interface {
