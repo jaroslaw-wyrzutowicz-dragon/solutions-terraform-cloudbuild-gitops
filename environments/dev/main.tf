@@ -34,7 +34,7 @@ metadata_startup_script = "sudo apt-get update | gcloud auth configure-docker | 
 
   boot_disk {
     initialize_params {
-      image = "cos-cloud/cos-stable"
+      image = "debian-cloud/debian-10" //"cos-cloud/cos-stable"
     }
   }
 
