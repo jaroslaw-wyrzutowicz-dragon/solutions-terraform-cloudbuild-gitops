@@ -41,7 +41,7 @@ metadata_startup_script = "curl -fsSL https://get.docker.com/ | sh && sudo syste
 service_account {
     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
     # email  = "datastoreuser1@my-first-project-310908.iam.gserviceaccount.com" 
-    scopes = ["cloud-platform"] //["datastore", "cloud-source-repos", "storage-full"]
+    scopes = ["datastore"] //["cloud-platform"] //["datastore", "cloud-source-repos", "storage-full"]
   }
 
   network_interface {
