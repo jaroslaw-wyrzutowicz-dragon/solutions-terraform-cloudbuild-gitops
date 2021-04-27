@@ -34,7 +34,7 @@ metadata_startup_script = "docker-credential-gcr configure-docker | sudo docker 
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-10" // "cos-cloud/cos-stable"
+      image = "debian-cloud/debian-9" // "cos-cloud/cos-stable"
     }
   }
 
