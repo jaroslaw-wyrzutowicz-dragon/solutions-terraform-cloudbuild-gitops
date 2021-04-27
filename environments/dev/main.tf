@@ -34,7 +34,7 @@ metadata_startup_script = "sudo su -c 'gcloud auth configure-docker --quiet' && 
 
   boot_disk {
     initialize_params {
-      image = /*"debian-cloud/debian-10" */  "cos-cloud/cos-stable"
+      image = /*"debian-cloud/debian-10" */  "centos-cloud/centos-7" //"cos-cloud/cos-stable"
     }
   }
 
