@@ -29,7 +29,7 @@ resource "google_datastore_index" "default" {
   zone         = "us-central1-a"
   allow_stopping_for_update = true
 
-metadata_startup_script = "sudo apt install docker.io -y && sudo su -c 'gcloud auth configure-docker --quiet' && sudo docker pull gcr.io/my-first-project-310908/docker-app-3:latest && sudo docker run -dp 3000:3000 gcr.io/my-first-project-310908/docker-app-3"
+metadata_startup_script = "sudo su -c apt install docker.io -y && sudo su -c 'gcloud auth configure-docker --quiet' && sudo su -c docker pull gcr.io/my-first-project-310908/docker-app-3:latest && sudo su -c docker run -dp 3000:3000 gcr.io/my-first-project-310908/docker-app-3"
 # apt-get update && sudo apt-get install apache2 -y && echo '<html><body><h1>Environment: ${local.network}</h1></body></html>' | sudo tee /var/www/html/index.html"
 
   boot_disk {
