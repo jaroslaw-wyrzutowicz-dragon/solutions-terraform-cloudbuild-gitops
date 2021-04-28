@@ -38,11 +38,11 @@ resource "google_datastore_index" "default" {
 #     }
 #   }
 
-service_account {
-    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    # email  = "datastoreuser1@my-first-project-310908.iam.gserviceaccount.com" 
-    scopes = ["datastore", "storage-full"] //["cloud-platform"] //["datastore", "cloud-source-repos", "storage-full"]
-  }
+# service_account {
+#     # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+#     # email  = "datastoreuser1@my-first-project-310908.iam.gserviceaccount.com" 
+#     scopes = ["datastore", "storage-full"] //["cloud-platform"] //["datastore", "cloud-source-repos", "storage-full"]
+#   }
 
 #   network_interface {
 #     # A default network is created for all GCP projects
