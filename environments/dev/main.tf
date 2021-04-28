@@ -44,13 +44,13 @@ service_account {
     scopes = ["datastore", "storage-full"] //["cloud-platform"] //["datastore", "cloud-source-repos", "storage-full"]
   }
 
-  network_interface {
-    # A default network is created for all GCP projects
-    network = "default"
-    access_config {
-    }
-  }
-}
+#   network_interface {
+#     # A default network is created for all GCP projects
+#     network = "default"
+#     access_config {
+#     }
+#   }
+# }
 
 module "vm_instance" {
   source  = "../../modules/vm_instance"
