@@ -1,7 +1,7 @@
 resource "google_compute_instance" "vm_instance1" {
   name         = "terraform-instance"
   machine_type = "f1-micro"
-  zone         = "us-central1-a"
+  zone         = "us-west1-a"
   project      = "${var.project}"
   allow_stopping_for_update = true
 
