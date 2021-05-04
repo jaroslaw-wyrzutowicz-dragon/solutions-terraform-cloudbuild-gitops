@@ -12,7 +12,7 @@ resource "google_compute_network" "vpc_network" {
 
 
 resource "google_datastore_index" "default" {
-  kind = "kind-test-5"
+  kind = "kind-test-6"
   properties {
     name = "property_a"
     direction = "ASCENDING"
